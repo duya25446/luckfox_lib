@@ -1,45 +1,15 @@
 {
     "configurations": [
         {
-            "name": "Win32",
+            "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**"
             ],
-            "defines": [
-                "_DEBUG",
-                "UNICODE",
-                "_UNICODE"
-            ],
-            "windowsSdkVersion": "10.0.22621.0",
-            "compilerPath": "cl.exe",
+            "defines": [],
+            "compilerPath": "./luckfox-pico/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/bin/arm-rockchip830-linux-uclibcgnueabihf-gcc",
             "cStandard": "c17",
-            "cppStandard": "c++17",
-            "intelliSenseMode": "windows-msvc-x64"
-        },
-        {
-            "name": "arm linux",
-            "includePath": [
-                "/home/duya25446/luckfox/**"
-            ],
-            "defines": [
-                "_DEBUG",
-                "UNICODE",
-                "_UNICODE"
-            ],
-            "windowsSdkVersion": "10.0.22621.0",
-            "compilerPath": "/home/duya25446/luckfox/luckfox-pico/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/bin/arm-rockchip830-linux-uclibcgnueabihf-gcc",
-            "cStandard": "c17",
-            "cppStandard": "c++17",
-            "intelliSenseMode": "linux-gcc-arm",
-            "compilerPathInCppPropertiesJson": "\\\\wsl.localhost\\Ubuntu\\home\\duya25446\\luckfox\\luckfox-pico\\tools\\linux\\toolchain\\arm-rockchip830-linux-uclibcgnueabihf\\bin\\arm-rockchip830-linux-uclibcgnueabihf-gcc",
-            "mergeConfigurations": false,
-            "browse": {
-                "path": [
-                    "/home/duya25446/luckfox/**",
-                    "${workspaceFolder}"
-                ],
-                "limitSymbolsToIncludedHeaders": true
-            }
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "linux-gcc-arm"
         }
     ],
     "version": 4
