@@ -1,5 +1,6 @@
 cmake_minimum_required (VERSION 3.0)
 project (main)
+
 set(CMAKE_SYSTEM_NAME Linux)
 set(CMAKE_SYSTEM_PROCESSOR arm)
 set(tools luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/)
