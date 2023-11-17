@@ -11,6 +11,7 @@ SET(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
 SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 
 include_directories(lib/include)
+include_directories(.)
 # 创建生成目录
 set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/build)
 file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR})
@@ -20,10 +21,10 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
 aux_source_directory(./lib/src DIR_LIB_SRCS)
-
+aux_source_directory(. DIR_SRCS)
 add_library (lib_src ${DIR_LIB_SRCS})
 
 add_executable(main
-    main.c
+    main.c ${DIR_SRCS}
 )
 target_link_libraries(main lib_src)
