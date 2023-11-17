@@ -14,7 +14,6 @@ extern "C" {
 #include <unistd.h>
 #include <errno.h>
 #include <pthread.h>
-//#include <lib_uart.c>
 
 extern unsigned char uart_rxbuffer[1024];
 

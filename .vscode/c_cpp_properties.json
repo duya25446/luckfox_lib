@@ -8,10 +8,10 @@
                 "${workspaceFolder}/lib/src"
             ],
             "defines": [],
-            "compilerPath": "./luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/bin/arm-rockchip830-linux-uclibcgnueabihf-gcc",
             "cStandard": "c17",
             "cppStandard": "gnu++17",
-            "intelliSenseMode": "linux-gcc-arm"
+            "intelliSenseMode": "linux-gcc-arm",
+            "compilerPath": "./luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/bin/arm-rockchip830-linux-uclibcgnueabihf-gcc"
         }
     ],
     "version": 4
