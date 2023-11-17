@@ -6,15 +6,10 @@
 #include <unistd.h>
 #include <errno.h>
 
-
-int uart_transmit(int uart0_filestream, char* data, int length)
-{
-    int count = write(uart0_filestream, data, length);
-    if (count < 0) {
-        perror("UART TX error");
-        return -1;
-    }
-    return count;
+int handle_error(int uart0_filestream, const char* error_message) {
+    perror(error_message);
+    close(uart0_filestream);
+    return -1;
 }
 
 int uart_init(int port_num, int speed) {
@@ -22,17 +17,14 @@ int uart_init(int port_num, int speed) {
     sprintf(port, "/dev/ttyS%d", port_num);
     int uart0_filestream = open(port, O_RDWR | O_NOCTTY | O_NDELAY);
     if (uart0_filestream == -1) {
-        perror("Failed to open UART");
-        return -1;
+        return handle_error(uart0_filestream, "Failed to open UART");
     }
     
     struct termios options;
     memset(&options, 0, sizeof(options));  // 清空 options 结构体
     
     if (tcgetattr(uart0_filestream, &options) != 0) {
-        perror("Failed to get attributes");
-        close(uart0_filestream);
-        return -1;
+        return handle_error(uart0_filestream, "Failed to get attributes");
     }
     
     cfsetospeed(&options, speed);
@@ -45,13 +37,33 @@ int uart_init(int port_num, int speed) {
     options.c_lflag = 0;  // 非规范模式
 
     if (tcsetattr(uart0_filestream, TCSANOW, &options) != 0) {
-        perror("Failed to set attributes");
-        close(uart0_filestream);
-        return -1;
+        return handle_error(uart0_filestream, "Failed to set attributes");
     }
 
     tcflush(uart0_filestream, TCIOFLUSH);  // 清空输入输出缓冲区
     return uart0_filestream;
+}
+
+
+
+int uart_transmit(int uart0_filestream, char* data, int length)
+{
+    int count = write(uart0_filestream, data, length);
+    if (count < 0) {
+        return handle_error(uart0_filestream, "UART TX error");
+    }
+    return count;
+}
+
+
+
+int uart_receive(int uart0_filestream, char* data, int length)
+{
+    int count = read(uart0_filestream, data, length);
+    if (count < 0) {
+        return handle_error(uart0_filestream, "UART RX error");
+    }
+    return count;
 }
 
 
