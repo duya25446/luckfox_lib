@@ -6,6 +6,7 @@
 // #include <unistd.h>
 // #include <errno.h>
 // #include <pthread.h>
+#include "lib_uart.h"
 
 
 unsigned char uart_rxbuffer[1024];
