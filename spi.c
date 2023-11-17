@@ -58,10 +58,12 @@ void main(char* args)
 
     uint8_t tx_buffer[2] = {0x01, 0x02};
     uint8_t rx_buffer[2] = {0x00, 0x00};
-
-    spi_transfer(spi_file, tx_buffer, rx_buffer, 2);
-
-    printf("Received: %02x %02x\n", rx_buffer[0], rx_buffer[1]);
+    while(1)
+    {
+        spi_transfer(spi_file, tx_buffer, rx_buffer, 2);
+        printf("Received: %02x %02x\n", rx_buffer[0], rx_buffer[1]);
+        sleep(1);
+    }
 
     close(spi_file);
 }
