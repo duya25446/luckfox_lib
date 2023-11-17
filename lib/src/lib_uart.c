@@ -1,11 +1,11 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <fcntl.h>
-#include <termios.h>
-#include <unistd.h>
-#include <errno.h>
-#include <pthread.h>
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// #include <fcntl.h>
+// #include <termios.h>
+// #include <unistd.h>
+// #include <errno.h>
+// #include <pthread.h>
 
 
 unsigned char uart_rxbuffer[1024];
@@ -85,11 +85,33 @@ void uart_rx_task(int uart0_filestream)
     }
 }
 
+void uart_tx_task(int uart0_filestream)
+{
+    int count = 0;
+    unsigned char* data = "Hello World!";
+    while (1)
+    {
+        count = write(uart0_filestream, data, strlen(data));
+        if (count > 0)
+        {
+            printf("TX: %s\n", data);
+        }
+        usleep(1000000);
+    }
+}
+
 pthread_t create_uart_rx_task(int uart0_filestream)
 {
     pthread_t thread_uart_rx;
     pthread_create(&thread_uart_rx, NULL, (void*)uart_rx_task, (void*)uart0_filestream);
     return thread_uart_rx;
+}
+
+pthread_t create_uart_tx_task(int uart0_filestream)
+{
+    pthread_t thread_uart_tx;
+    pthread_create(&thread_uart_tx, NULL, (void*)uart_tx_task, (void*)uart0_filestream);
+    return thread_uart_tx;
 }
 
 //demo：
