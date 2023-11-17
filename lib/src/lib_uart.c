@@ -5,10 +5,15 @@
 #include <termios.h>
 #include <unistd.h>
 #include <errno.h>
+#include <pthread.h>
+
+
+unsigned char uart_rxbuffer[1024];
+
 
 int handle_error(int uart0_filestream, const char* error_message) {
     perror(error_message);
-    close(uart0_filestream);
+    //close(uart0_filestream);
     return -1;
 }
 
@@ -46,7 +51,7 @@ int uart_init(int port_num, int speed) {
 
 
 
-int uart_transmit(int uart0_filestream, char* data, int length)
+int uart_transmit(int uart0_filestream, unsigned char* data, int length)
 {
     int count = write(uart0_filestream, data, length);
     if (count < 0) {
@@ -57,7 +62,7 @@ int uart_transmit(int uart0_filestream, char* data, int length)
 
 
 
-int uart_receive(int uart0_filestream, char* data, int length)
+int uart_receive(int uart0_filestream,unsigned char* data, int length)
 {
     int count = read(uart0_filestream, data, length);
     if (count < 0) {
@@ -66,16 +71,37 @@ int uart_receive(int uart0_filestream, char* data, int length)
     return count;
 }
 
-
-void main(char* args)
+void uart_rx_task(int uart0_filestream)
 {
-    int uart0_filestream = uart_init(3, B921600);
-    char* data = "Hello World!";
+    int count = 0;
     while (1)
     {
-        uart_transmit(uart0_filestream, data, strlen(data));
-        //sleep(1);
-        usleep(1000);  // 1 毫秒
+        count = read(uart0_filestream, (void*)uart_rxbuffer, 1024);
+        if (count > 0)
+        {
+            printf("RX: %s\n", uart_rxbuffer);
+        }
+        usleep(10);
     }
-    close(uart0_filestream);
 }
+
+pthread_t create_uart_rx_task(int uart0_filestream)
+{
+    pthread_t thread_uart_rx;
+    pthread_create(&thread_uart_rx, NULL, (void*)uart_rx_task, (void*)uart0_filestream);
+    return thread_uart_rx;
+}
+
+//demo：
+// void main(char* args)
+// {
+//     int uart0_filestream = uart_init(3, B921600);
+//     unsigned char* data = "Hello World!";
+//     while (1)
+//     {
+//         uart_transmit(uart0_filestream, data, strlen(data));
+//         sleep(1);
+//         //usleep(1);  // 1 毫秒
+//     }
+//     close(uart0_filestream);
+// }

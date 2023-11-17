@@ -7,6 +7,8 @@
 			"command": "./luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/bin/arm-rockchip830-linux-uclibcgnueabihf-gcc",
 			"args": [
 				"-fdiagnostics-color=always",
+				"-I${fileDirname}/lib/include",
+				"-I${fileDirname}/lib/src",
 				"-g",
 				"${file}",
 				"-o",
