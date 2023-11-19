@@ -69,10 +69,38 @@ include CMakeFiles/lib_src.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/lib_src.dir/flags.make
 
+CMakeFiles/lib_src.dir/lib/src/lcd.c.o: CMakeFiles/lib_src.dir/flags.make
+CMakeFiles/lib_src.dir/lib/src/lcd.c.o: lib/src/lcd.c
+CMakeFiles/lib_src.dir/lib/src/lcd.c.o: CMakeFiles/lib_src.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/duya25446/luckfox_lib/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/lib_src.dir/lib/src/lcd.c.o"
+	luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/bin/arm-rockchip830-linux-uclibcgnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lib_src.dir/lib/src/lcd.c.o -MF CMakeFiles/lib_src.dir/lib/src/lcd.c.o.d -o CMakeFiles/lib_src.dir/lib/src/lcd.c.o -c /home/duya25446/luckfox_lib/lib/src/lcd.c
+
+CMakeFiles/lib_src.dir/lib/src/lcd.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lib_src.dir/lib/src/lcd.c.i"
+	luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/bin/arm-rockchip830-linux-uclibcgnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/duya25446/luckfox_lib/lib/src/lcd.c > CMakeFiles/lib_src.dir/lib/src/lcd.c.i
+
+CMakeFiles/lib_src.dir/lib/src/lcd.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lib_src.dir/lib/src/lcd.c.s"
+	luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/bin/arm-rockchip830-linux-uclibcgnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/duya25446/luckfox_lib/lib/src/lcd.c -o CMakeFiles/lib_src.dir/lib/src/lcd.c.s
+
+CMakeFiles/lib_src.dir/lib/src/lcd_init.c.o: CMakeFiles/lib_src.dir/flags.make
+CMakeFiles/lib_src.dir/lib/src/lcd_init.c.o: lib/src/lcd_init.c
+CMakeFiles/lib_src.dir/lib/src/lcd_init.c.o: CMakeFiles/lib_src.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/duya25446/luckfox_lib/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/lib_src.dir/lib/src/lcd_init.c.o"
+	luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/bin/arm-rockchip830-linux-uclibcgnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lib_src.dir/lib/src/lcd_init.c.o -MF CMakeFiles/lib_src.dir/lib/src/lcd_init.c.o.d -o CMakeFiles/lib_src.dir/lib/src/lcd_init.c.o -c /home/duya25446/luckfox_lib/lib/src/lcd_init.c
+
+CMakeFiles/lib_src.dir/lib/src/lcd_init.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lib_src.dir/lib/src/lcd_init.c.i"
+	luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/bin/arm-rockchip830-linux-uclibcgnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/duya25446/luckfox_lib/lib/src/lcd_init.c > CMakeFiles/lib_src.dir/lib/src/lcd_init.c.i
+
+CMakeFiles/lib_src.dir/lib/src/lcd_init.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lib_src.dir/lib/src/lcd_init.c.s"
+	luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/bin/arm-rockchip830-linux-uclibcgnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/duya25446/luckfox_lib/lib/src/lcd_init.c -o CMakeFiles/lib_src.dir/lib/src/lcd_init.c.s
+
 CMakeFiles/lib_src.dir/lib/src/lib_gpio.c.o: CMakeFiles/lib_src.dir/flags.make
 CMakeFiles/lib_src.dir/lib/src/lib_gpio.c.o: lib/src/lib_gpio.c
 CMakeFiles/lib_src.dir/lib/src/lib_gpio.c.o: CMakeFiles/lib_src.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/duya25446/luckfox_lib/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/lib_src.dir/lib/src/lib_gpio.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/duya25446/luckfox_lib/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/lib_src.dir/lib/src/lib_gpio.c.o"
 	luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/bin/arm-rockchip830-linux-uclibcgnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lib_src.dir/lib/src/lib_gpio.c.o -MF CMakeFiles/lib_src.dir/lib/src/lib_gpio.c.o.d -o CMakeFiles/lib_src.dir/lib/src/lib_gpio.c.o -c /home/duya25446/luckfox_lib/lib/src/lib_gpio.c
 
 CMakeFiles/lib_src.dir/lib/src/lib_gpio.c.i: cmake_force
@@ -86,7 +114,7 @@ CMakeFiles/lib_src.dir/lib/src/lib_gpio.c.s: cmake_force
 CMakeFiles/lib_src.dir/lib/src/lib_spi.c.o: CMakeFiles/lib_src.dir/flags.make
 CMakeFiles/lib_src.dir/lib/src/lib_spi.c.o: lib/src/lib_spi.c
 CMakeFiles/lib_src.dir/lib/src/lib_spi.c.o: CMakeFiles/lib_src.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/duya25446/luckfox_lib/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/lib_src.dir/lib/src/lib_spi.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/duya25446/luckfox_lib/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/lib_src.dir/lib/src/lib_spi.c.o"
 	luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/bin/arm-rockchip830-linux-uclibcgnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lib_src.dir/lib/src/lib_spi.c.o -MF CMakeFiles/lib_src.dir/lib/src/lib_spi.c.o.d -o CMakeFiles/lib_src.dir/lib/src/lib_spi.c.o -c /home/duya25446/luckfox_lib/lib/src/lib_spi.c
 
 CMakeFiles/lib_src.dir/lib/src/lib_spi.c.i: cmake_force
@@ -100,7 +128,7 @@ CMakeFiles/lib_src.dir/lib/src/lib_spi.c.s: cmake_force
 CMakeFiles/lib_src.dir/lib/src/lib_uart.c.o: CMakeFiles/lib_src.dir/flags.make
 CMakeFiles/lib_src.dir/lib/src/lib_uart.c.o: lib/src/lib_uart.c
 CMakeFiles/lib_src.dir/lib/src/lib_uart.c.o: CMakeFiles/lib_src.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/duya25446/luckfox_lib/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/lib_src.dir/lib/src/lib_uart.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/duya25446/luckfox_lib/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/lib_src.dir/lib/src/lib_uart.c.o"
 	luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/bin/arm-rockchip830-linux-uclibcgnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lib_src.dir/lib/src/lib_uart.c.o -MF CMakeFiles/lib_src.dir/lib/src/lib_uart.c.o.d -o CMakeFiles/lib_src.dir/lib/src/lib_uart.c.o -c /home/duya25446/luckfox_lib/lib/src/lib_uart.c
 
 CMakeFiles/lib_src.dir/lib/src/lib_uart.c.i: cmake_force
@@ -113,6 +141,8 @@ CMakeFiles/lib_src.dir/lib/src/lib_uart.c.s: cmake_force
 
 # Object files for target lib_src
 lib_src_OBJECTS = \
+"CMakeFiles/lib_src.dir/lib/src/lcd.c.o" \
+"CMakeFiles/lib_src.dir/lib/src/lcd_init.c.o" \
 "CMakeFiles/lib_src.dir/lib/src/lib_gpio.c.o" \
 "CMakeFiles/lib_src.dir/lib/src/lib_spi.c.o" \
 "CMakeFiles/lib_src.dir/lib/src/lib_uart.c.o"
@@ -120,12 +150,14 @@ lib_src_OBJECTS = \
 # External object files for target lib_src
 lib_src_EXTERNAL_OBJECTS =
 
+build/liblib_src.a: CMakeFiles/lib_src.dir/lib/src/lcd.c.o
+build/liblib_src.a: CMakeFiles/lib_src.dir/lib/src/lcd_init.c.o
 build/liblib_src.a: CMakeFiles/lib_src.dir/lib/src/lib_gpio.c.o
 build/liblib_src.a: CMakeFiles/lib_src.dir/lib/src/lib_spi.c.o
 build/liblib_src.a: CMakeFiles/lib_src.dir/lib/src/lib_uart.c.o
 build/liblib_src.a: CMakeFiles/lib_src.dir/build.make
 build/liblib_src.a: CMakeFiles/lib_src.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/duya25446/luckfox_lib/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library build/liblib_src.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/duya25446/luckfox_lib/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C static library build/liblib_src.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/lib_src.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lib_src.dir/link.txt --verbose=$(VERBOSE)
 

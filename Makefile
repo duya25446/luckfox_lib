@@ -142,6 +142,54 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+lib/src/lcd.o: lib/src/lcd.c.o
+.PHONY : lib/src/lcd.o
+
+# target to build an object file
+lib/src/lcd.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib_src.dir/build.make CMakeFiles/lib_src.dir/lib/src/lcd.c.o
+.PHONY : lib/src/lcd.c.o
+
+lib/src/lcd.i: lib/src/lcd.c.i
+.PHONY : lib/src/lcd.i
+
+# target to preprocess a source file
+lib/src/lcd.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib_src.dir/build.make CMakeFiles/lib_src.dir/lib/src/lcd.c.i
+.PHONY : lib/src/lcd.c.i
+
+lib/src/lcd.s: lib/src/lcd.c.s
+.PHONY : lib/src/lcd.s
+
+# target to generate assembly for a file
+lib/src/lcd.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib_src.dir/build.make CMakeFiles/lib_src.dir/lib/src/lcd.c.s
+.PHONY : lib/src/lcd.c.s
+
+lib/src/lcd_init.o: lib/src/lcd_init.c.o
+.PHONY : lib/src/lcd_init.o
+
+# target to build an object file
+lib/src/lcd_init.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib_src.dir/build.make CMakeFiles/lib_src.dir/lib/src/lcd_init.c.o
+.PHONY : lib/src/lcd_init.c.o
+
+lib/src/lcd_init.i: lib/src/lcd_init.c.i
+.PHONY : lib/src/lcd_init.i
+
+# target to preprocess a source file
+lib/src/lcd_init.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib_src.dir/build.make CMakeFiles/lib_src.dir/lib/src/lcd_init.c.i
+.PHONY : lib/src/lcd_init.c.i
+
+lib/src/lcd_init.s: lib/src/lcd_init.c.s
+.PHONY : lib/src/lcd_init.s
+
+# target to generate assembly for a file
+lib/src/lcd_init.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib_src.dir/build.make CMakeFiles/lib_src.dir/lib/src/lcd_init.c.s
+.PHONY : lib/src/lcd_init.c.s
+
 lib/src/lib_gpio.o: lib/src/lib_gpio.c.o
 .PHONY : lib/src/lib_gpio.o
 
@@ -248,6 +296,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... lib_src"
 	@echo "... main"
+	@echo "... lib/src/lcd.o"
+	@echo "... lib/src/lcd.i"
+	@echo "... lib/src/lcd.s"
+	@echo "... lib/src/lcd_init.o"
+	@echo "... lib/src/lcd_init.i"
+	@echo "... lib/src/lcd_init.s"
 	@echo "... lib/src/lib_gpio.o"
 	@echo "... lib/src/lib_gpio.i"
 	@echo "... lib/src/lib_gpio.s"

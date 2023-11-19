@@ -1,4 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/lib_src.dir/lib/src/lcd.c.o"
+  "CMakeFiles/lib_src.dir/lib/src/lcd.c.o.d"
+  "CMakeFiles/lib_src.dir/lib/src/lcd_init.c.o"
+  "CMakeFiles/lib_src.dir/lib/src/lcd_init.c.o.d"
   "CMakeFiles/lib_src.dir/lib/src/lib_gpio.c.o"
   "CMakeFiles/lib_src.dir/lib/src/lib_gpio.c.o.d"
   "CMakeFiles/lib_src.dir/lib/src/lib_spi.c.o"
