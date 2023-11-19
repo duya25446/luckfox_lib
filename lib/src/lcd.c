@@ -11,18 +11,32 @@
 								color       Ҫ������ɫ
       ����ֵ��  ��
 ******************************************************************************/
-void LCD_Fill(uint16_t xsta,uint16_t ysta,uint16_t xend,uint16_t yend,uint16_t color)
-{          
-	uint16_t i,j; 
-	LCD_Address_Set(xsta,ysta,xend-1,yend-1);//������ʾ��Χ
-	for(i=ysta;i<yend;i++)
-	{													   	 	
-		for(j=xsta;j<xend;j++)
-		{
-			LCD_WR_DATA(color);
-		}
-	} 					  	    
+void LCD_Fill(uint16_t xsta,uint16_t ysta,uint16_t xend,uint16_t yend,uint16_t *buffer)
+{
+	LCD_Address_Set(xsta,ysta,xend-1,yend-1);
+	auto_split_transfer(hspi0,(uint8_t *)buffer,xend*yend*2);
+	// uint8_t *begin = (uint8_t *)buffer;
+	// uint8_t *end = (uint8_t *)buffer + 240*240*2;
+	// while (begin < end) 
+	// {
+    // 	size_t len = (end - begin < 4096) ? end - begin : 4096;
+    // 	spi_transfer(hspi0,begin,NULL,len);
+    // 	begin += len;
+	// }
 }
+
+// void LCD_Fill(uint16_t xsta,uint16_t ysta,uint16_t xend,uint16_t yend,uint16_t color)
+// {          
+// 	uint16_t i,j; 
+// 	LCD_Address_Set(xsta,ysta,xend-1,yend-1);//������ʾ��Χ
+// 	for(i=ysta;i<yend;i++)
+// 	{													   	 	
+// 		for(j=xsta;j<xend;j++)
+// 		{
+// 			LCD_WR_DATA(color);
+// 		}
+// 	} 					  	    
+// }
 
 /******************************************************************************
       ����˵������ָ��λ�û���

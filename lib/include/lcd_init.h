@@ -34,12 +34,16 @@
 
 
 void LCD_GPIO_Init(void);
-void LCD_Writ_Bus(unsigned short dat,unsigned char lenght);
+void LCD_Writ_Bus(unsigned short dat) ;
 void LCD_WR_DATA8(unsigned char dat);
 void LCD_WR_DATA(unsigned short dat);
 void LCD_WR_REG(unsigned char dat);
 void LCD_Address_Set(unsigned short x1,unsigned short y1,unsigned short x2,unsigned short y2);
 void LCD_Init(void);
+
+int hspi0;
+
+
 #endif
 
 

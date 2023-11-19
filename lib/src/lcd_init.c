@@ -3,7 +3,6 @@
 
 
 unsigned char tag = 1;
-int hspi0;
 
 void LCD_GPIO_Init(void)
 {
@@ -15,7 +14,7 @@ void LCD_GPIO_Init(void)
 	gpio_output_init(54);
 	gpio_output_init(34);
 	gpio_output_init(4);
-	hspi0 = spi_init(SPI0,0,8);
+	hspi0 = spi_init(SPI0,SPI_MODE_3,8);
 	LCD_CS_Clr();
 }
 
@@ -24,11 +23,11 @@ void LCD_GPIO_Init(void)
       ������ݣ�dat  Ҫд��Ĵ�������
       ����ֵ��  ��
 ******************************************************************************/
-void LCD_Writ_Bus(unsigned short dat,unsigned char lenght) 
+void LCD_Writ_Bus(unsigned short dat) 
 {	
 	//unsigned char i;
 	//LCD_CS_Clr();
-	spi_transfer(hspi0,(unsigned char *)&dat,NULL,lenght);
+	spi_transfer(hspi0,(unsigned char *)&dat,NULL,1);
   //while(tag);
 //	for(i=0;i<8;i++)
 //	{			  
@@ -55,7 +54,7 @@ void LCD_Writ_Bus(unsigned short dat,unsigned char lenght)
 ******************************************************************************/
 void LCD_WR_DATA8(unsigned char dat)
 {
-	LCD_Writ_Bus((unsigned short)dat,1);
+	LCD_Writ_Bus((unsigned short)dat);
 }
 
 
@@ -66,7 +65,8 @@ void LCD_WR_DATA8(unsigned char dat)
 ******************************************************************************/
 void LCD_WR_DATA(unsigned short dat)
 {
-	LCD_Writ_Bus(dat,2);
+	LCD_Writ_Bus(dat>>8);
+	LCD_Writ_Bus(dat);
 }
 
 
@@ -78,7 +78,7 @@ void LCD_WR_DATA(unsigned short dat)
 void LCD_WR_REG(unsigned char dat)
 {
 	LCD_DC_Clr();//д����
-	LCD_Writ_Bus(dat,1);
+	LCD_Writ_Bus(dat);
 	LCD_DC_Set();//д����
 }
 
