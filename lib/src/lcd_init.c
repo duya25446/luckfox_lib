@@ -1,31 +1,34 @@
 #include "lcd_init.h"
 //#include "delay.h"
 
-//void LCD_GPIO_Init(void)
-//{
-//	GPIO_InitTypeDef  GPIO_InitStructure;
-// 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);	 //ʹ��A�˿�ʱ��
-//	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0|GPIO_Pin_1|GPIO_Pin_2|GPIO_Pin_3|GPIO_Pin_4|GPIO_Pin_5;	 
-// 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 		 //�������
-//	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;//�ٶ�50MHz
-// 	GPIO_Init(GPIOA, &GPIO_InitStructure);	  //��ʼ��GPIOA
-// 	GPIO_SetBits(GPIOA,GPIO_Pin_0|GPIO_Pin_1|GPIO_Pin_2|GPIO_Pin_3|GPIO_Pin_4|GPIO_Pin_5);
-//}
+
 unsigned char tag = 1;
-//extern SPI_HandleTypeDef hspi1;
+int hspi0;
 
-
+void LCD_GPIO_Init(void)
+{
+	gpio_export(55);
+	gpio_export(54);
+	gpio_export(34);
+	gpio_export(4);
+	gpio_output_init(55);
+	gpio_output_init(54);
+	gpio_output_init(34);
+	gpio_output_init(4);
+	hspi0 = spi_init(SPI0,0,8);
+	LCD_CS_Clr();
+}
 
 /******************************************************************************
       ����˵����LCD��������д�뺯��
       ������ݣ�dat  Ҫд��Ĵ�������
       ����ֵ��  ��
 ******************************************************************************/
-void LCD_Writ_Bus(unsigned char dat) 
+void LCD_Writ_Bus(unsigned short dat,unsigned char lenght) 
 {	
 	//unsigned char i;
 	//LCD_CS_Clr();
-  //HAL_SPI_Transmit(&hspi1,&dat,1,0xff);
+	spi_transfer(hspi0,(unsigned char *)&dat,NULL,lenght);
   //while(tag);
 //	for(i=0;i<8;i++)
 //	{			  
@@ -52,7 +55,7 @@ void LCD_Writ_Bus(unsigned char dat)
 ******************************************************************************/
 void LCD_WR_DATA8(unsigned char dat)
 {
-	LCD_Writ_Bus(dat);
+	LCD_Writ_Bus((unsigned short)dat,1);
 }
 
 
@@ -63,8 +66,7 @@ void LCD_WR_DATA8(unsigned char dat)
 ******************************************************************************/
 void LCD_WR_DATA(unsigned short dat)
 {
-	LCD_Writ_Bus(dat>>8);
-	LCD_Writ_Bus(dat);
+	LCD_Writ_Bus(dat,2);
 }
 
 
@@ -76,7 +78,7 @@ void LCD_WR_DATA(unsigned short dat)
 void LCD_WR_REG(unsigned char dat)
 {
 	LCD_DC_Clr();//д����
-	LCD_Writ_Bus(dat);
+	LCD_Writ_Bus(dat,1);
 	LCD_DC_Set();//д����
 }
 
@@ -133,21 +135,21 @@ void LCD_Address_Set(unsigned short x1,unsigned short y1,unsigned short x2,unsig
 
 void LCD_Init(void)
 {
-	//LCD_GPIO_Init();//��ʼ��GPIO
+	LCD_GPIO_Init();
 	//LCD_CS_Clr();
-	LCD_RES_Clr();//��λ
+	LCD_RES_Clr();
 	//delay_ms(100);
-  HAL_Delay(100);
+  	usleep(1000);
 	LCD_RES_Set();
 	//delay_ms(100);
-	HAL_Delay(100);
-	LCD_BLK_Set();//�򿪱���
+	usleep(1000);
+	LCD_BLK_Set();
   //delay_ms(100);
-	HAL_Delay(100);
+	usleep(1000);
 	//************* Start Initial Sequence **********//
 	LCD_WR_REG(0x11); //Sleep out 
 	//delay_ms(120);              //Delay 120ms 
-  HAL_Delay(100);
+  	usleep(1000);
 	//************* Start Initial Sequence **********// 
 	LCD_WR_REG(0x36);
 	if(USE_HORIZONTAL==0)LCD_WR_DATA8(0x00);

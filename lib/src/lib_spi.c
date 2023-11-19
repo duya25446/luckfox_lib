@@ -29,7 +29,7 @@ int spi_transfer(int spi_file, uint8_t* tx_buffer, uint8_t* rx_buffer, size_t le
         .rx_buf = (unsigned long)rx_buffer,
         .len = len,
         .delay_usecs = 0,
-        .speed_hz = 30000000,
+        .speed_hz = 3000000,
         .bits_per_word = 8,
     };
 

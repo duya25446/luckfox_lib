@@ -54,4 +54,31 @@ CMakeFiles/main.dir/main.c.o: /home/duya25446/luckfox_lib/main.c \
  /home/duya25446/luckfox_lib/luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/arm-rockchip830-linux-uclibcgnueabihf/sysroot/usr/include/bits/sched.h \
  /home/duya25446/luckfox_lib/luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/arm-rockchip830-linux-uclibcgnueabihf/sysroot/usr/include/bits/uClibc_clk_tck.h \
  /home/duya25446/luckfox_lib/luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/arm-rockchip830-linux-uclibcgnueabihf/sysroot/usr/include/signal.h \
- /home/duya25446/luckfox_lib/luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/arm-rockchip830-linux-uclibcgnueabihf/sysroot/usr/include/bits/setjmp.h
+ /home/duya25446/luckfox_lib/luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/arm-rockchip830-linux-uclibcgnueabihf/sysroot/usr/include/bits/setjmp.h \
+ /home/duya25446/luckfox_lib/lib/include/lib_gpio.h \
+ /home/duya25446/luckfox_lib/lib/include/main.h \
+ /home/duya25446/luckfox_lib/luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/lib/gcc/arm-rockchip830-linux-uclibcgnueabihf/8.3.0/include/stdint.h \
+ /home/duya25446/luckfox_lib/luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/arm-rockchip830-linux-uclibcgnueabihf/sysroot/usr/include/stdint.h \
+ /home/duya25446/luckfox_lib/lib/include/lcd.h \
+ /home/duya25446/luckfox_lib/lib/include/main.h \
+ /home/duya25446/luckfox_lib/lib/include/lcd_init.h \
+ /home/duya25446/luckfox_lib/lib/include/lib_gpio.h \
+ /home/duya25446/luckfox_lib/lib/include/lib_spi.h \
+ /home/duya25446/luckfox_lib/luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/arm-rockchip830-linux-uclibcgnueabihf/sysroot/usr/include/linux/spi/spidev.h \
+ /home/duya25446/luckfox_lib/luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/arm-rockchip830-linux-uclibcgnueabihf/sysroot/usr/include/linux/types.h \
+ /home/duya25446/luckfox_lib/luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/arm-rockchip830-linux-uclibcgnueabihf/sysroot/usr/include/asm/types.h \
+ /home/duya25446/luckfox_lib/luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/arm-rockchip830-linux-uclibcgnueabihf/sysroot/usr/include/asm-generic/int-ll64.h \
+ /home/duya25446/luckfox_lib/luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/arm-rockchip830-linux-uclibcgnueabihf/sysroot/usr/include/asm/bitsperlong.h \
+ /home/duya25446/luckfox_lib/luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/arm-rockchip830-linux-uclibcgnueabihf/sysroot/usr/include/asm-generic/bitsperlong.h \
+ /home/duya25446/luckfox_lib/luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/arm-rockchip830-linux-uclibcgnueabihf/sysroot/usr/include/linux/posix_types.h \
+ /home/duya25446/luckfox_lib/luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/arm-rockchip830-linux-uclibcgnueabihf/sysroot/usr/include/linux/stddef.h \
+ /home/duya25446/luckfox_lib/luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/arm-rockchip830-linux-uclibcgnueabihf/sysroot/usr/include/asm/posix_types.h \
+ /home/duya25446/luckfox_lib/luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/arm-rockchip830-linux-uclibcgnueabihf/sysroot/usr/include/asm-generic/posix_types.h \
+ /home/duya25446/luckfox_lib/luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/arm-rockchip830-linux-uclibcgnueabihf/sysroot/usr/include/linux/ioctl.h \
+ /home/duya25446/luckfox_lib/luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/arm-rockchip830-linux-uclibcgnueabihf/sysroot/usr/include/asm/ioctl.h \
+ /home/duya25446/luckfox_lib/luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/arm-rockchip830-linux-uclibcgnueabihf/sysroot/usr/include/asm-generic/ioctl.h \
+ /home/duya25446/luckfox_lib/luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/arm-rockchip830-linux-uclibcgnueabihf/sysroot/usr/include/sys/ioctl.h \
+ /home/duya25446/luckfox_lib/luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/arm-rockchip830-linux-uclibcgnueabihf/sysroot/usr/include/bits/ioctls.h \
+ /home/duya25446/luckfox_lib/luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/arm-rockchip830-linux-uclibcgnueabihf/sysroot/usr/include/asm/ioctls.h \
+ /home/duya25446/luckfox_lib/luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/arm-rockchip830-linux-uclibcgnueabihf/sysroot/usr/include/asm-generic/ioctls.h \
+ /home/duya25446/luckfox_lib/luckfox-pico-s/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/arm-rockchip830-linux-uclibcgnueabihf/sysroot/usr/include/bits/ioctl-types.h

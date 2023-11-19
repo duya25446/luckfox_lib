@@ -1,8 +1,10 @@
 #ifndef __LCD_INIT_H
 #define __LCD_INIT_H
 #include "main.h"
+#include "lib_gpio.h"
+#include "lib_spi.h"
 
-#define USE_HORIZONTAL 3  //���ú�������������ʾ 0��1Ϊ���� 2��3Ϊ����
+#define USE_HORIZONTAL 3  
 
 
 #define LCD_W 240
@@ -18,26 +20,26 @@
 // #define LCD_MOSI_Clr() HAL_GPIO_WritePin(GPIOA,GPIO_PIN_7,GPIO_PIN_RESET)//SDA=MOSI
 // #define LCD_MOSI_Set() HAL_GPIO_WritePin(GPIOA,GPIO_PIN_7,GPIO_PIN_SET)
 
-// #define LCD_RES_Clr()  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_1,GPIO_PIN_RESET)//RES
-// #define LCD_RES_Set()  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_1,GPIO_PIN_SET)
+#define LCD_RES_Clr()  gpio_output_write(55,0)//RES 55
+#define LCD_RES_Set()  gpio_output_write(55,1)
 
-// #define LCD_DC_Clr()   HAL_GPIO_WritePin(GPIOA,GPIO_PIN_2,GPIO_PIN_RESET)//DC
-// #define LCD_DC_Set()   HAL_GPIO_WritePin(GPIOA,GPIO_PIN_2,GPIO_PIN_SET)
+#define LCD_DC_Clr()   gpio_output_write(54,0) //DC 54
+#define LCD_DC_Set()   gpio_output_write(54,1)
 
-// #define LCD_CS_Clr()   HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4,GPIO_PIN_RESET)//BLK
-// #define LCD_CS_Set()   HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4,GPIO_PIN_SET)
+#define LCD_CS_Clr()   gpio_output_write(34,0) //CS 34
+#define LCD_CS_Set()   gpio_output_write(34,1)
 
-// #define LCD_BLK_Clr()  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_3,GPIO_PIN_RESET)//BLK
-// #define LCD_BLK_Set()  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_3,GPIO_PIN_SET)
+#define LCD_BLK_Clr()  gpio_output_write(4,0) //BLK 4
+#define LCD_BLK_Set()  gpio_output_write(4,1)
 
 
-//void LCD_GPIO_Init(void);//��ʼ��GPIO
-void LCD_Writ_Bus(unsigned char dat);//ģ��SPIʱ��
-void LCD_WR_DATA8(unsigned char dat);//д��һ���ֽ�
-void LCD_WR_DATA(unsigned short dat);//д�������ֽ�
-void LCD_WR_REG(unsigned char dat);//д��һ��ָ��
-void LCD_Address_Set(unsigned short x1,unsigned short y1,unsigned short x2,unsigned short y2);//�������꺯��
-void LCD_Init(void);//LCD��ʼ��
+void LCD_GPIO_Init(void);
+void LCD_Writ_Bus(unsigned short dat,unsigned char lenght);
+void LCD_WR_DATA8(unsigned char dat);
+void LCD_WR_DATA(unsigned short dat);
+void LCD_WR_REG(unsigned char dat);
+void LCD_Address_Set(unsigned short x1,unsigned short y1,unsigned short x2,unsigned short y2);
+void LCD_Init(void);
 #endif
 
 
