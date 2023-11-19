@@ -1,12 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <linux/spi/spidev.h>
-#include <sys/ioctl.h>
-
-#define SPI_DEVICE_PATH "/dev/spidev0.0"
+#include "lib_spi.h"
 
 int spi_init(char* device_path, uint8_t mode, uint8_t bits) {
     int spi_file;
@@ -49,21 +41,21 @@ int spi_transfer(int spi_file, uint8_t* tx_buffer, uint8_t* rx_buffer, size_t le
     return 0;
 }
 
-void main(char* args)
-{
-    int spi_file = spi_init(SPI_DEVICE_PATH, 0, 8);
-    if (spi_file < 0) {
-        return;
-    }
+// void main(char* args)
+// {
+//     int spi_file = spi_init(SPI0, 0, 8);
+//     if (spi_file < 0) {
+//         return;
+//     }
 
-    uint8_t tx_buffer[2] = {0x01, 0x02};
-    uint8_t rx_buffer[2] = {0x00, 0x00};
-    while(1)
-    {
-        spi_transfer(spi_file, tx_buffer, rx_buffer, 2);
-        printf("Received: %02x %02x\n", rx_buffer[0], rx_buffer[1]);
-        sleep(1);
-    }
+//     uint8_t tx_buffer[2] = {0x01, 0x02};
+//     uint8_t rx_buffer[2] = {0x00, 0x00};
+//     while(1)
+//     {
+//         spi_transfer(spi_file, tx_buffer, rx_buffer, 2);
+//         printf("Received: %02x %02x\n", rx_buffer[0], rx_buffer[1]);
+//         sleep(1);
+//     }
 
-    close(spi_file);
-}
+//     close(spi_file);
+// }
